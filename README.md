@@ -84,16 +84,24 @@ La aplicación incluye tres ejemplos predefinidos accesibles desde el menú **Ej
 
 ### 1. Startup de Software 🚀
 
-**Enunciado:** Una startup de desarrollo de software está lanzando su producto al mercado. Ha decidido producir dos tipos de aplicaciones móviles: una de productividad (A1) y una de entretenimiento (A2). La empresa busca maximizar su beneficio total.
+**Enunciado:** Una startup de desarrollo de software está lanzando su producto al mercado. Ha decidido producir dos tipos de aplicaciones móviles: una de productividad (A1) y una de entretenimiento (A2). La empresa busca maximizar su beneficio total. Para producir cada aplicación, se requiere tiempo de desarrollo y de pruebas.
 
-**Datos del problema:**
+**Detalles del problema:**
 
-- **Variables:** A1 (apps de productividad), A2 (apps de entretenimiento)
-- **Función Objetivo:** Maximizar Z = 250·A1 + 300·A2
+- **Ganancias:** La ganancia por cada aplicación de productividad (A1) es de $250, y por cada aplicación de entretenimiento (A2) es de $300
+- **Recursos requeridos por app:**
+  - Para producir A1: se necesitan 20 horas de desarrollo y 10 horas de pruebas
+  - Para producir A2: se necesitan 15 horas de desarrollo y 15 horas de pruebas
+- **Recursos disponibles:** La empresa dispone de un total de 600 horas para desarrollo y 450 horas para pruebas a la semana
+
+**Formulación matemática:**
+
+- **Variables:** A1 = número de apps de productividad, A2 = número de apps de entretenimiento
+- **Función Objetivo:** Maximizar Z = 250·A1 + 300·A2 (ganancia total semanal)
 - **Restricciones:**
-  - Desarrollo: 20·A1 + 15·A2 ≤ 600 horas (La ganancia por A1 es $250, por A2 es $300)
-  - Pruebas: 10·A1 + 15·A2 ≤ 450 horas (A1 necesita 20h desarrollo + 10h pruebas, A2 necesita 15h desarrollo + 15h pruebas)
-  - A1 ≥ 0, A2 ≥ 0
+  - Desarrollo: 20·A1 + 15·A2 ≤ 600 (horas de desarrollo consumidas)
+  - Pruebas: 10·A1 + 15·A2 ≤ 450 (horas de pruebas consumidas)
+  - A1 ≥ 0, A2 ≥ 0 (no se pueden producir cantidades negativas)
 
 **Solución Esperada:**
 
@@ -115,20 +123,33 @@ La aplicación incluye tres ejemplos predefinidos accesibles desde el menú **Ej
 
 **Interpretación:** P1 requiere 2 unidades de materia prima y 1 hora de mano de obra, mientras que P2 requiere 1 unidad de materia prima y 2 horas de mano de obra.
 
-### 3. Problema de Mezcla 🧪
+### 3. Problema de Mezcla Farmacéutica 🧪
 
-**Enunciado:** Una empresa debe preparar una mezcla de dos componentes químicos (C1 y C2) para cumplir con ciertos requisitos de calidad, minimizando el costo total. El componente C1 cuesta $20 por unidad y C2 cuesta $30 por unidad.
+**Enunciado:** Un laboratorio farmacéutico debe producir un jarabe medicinal mezclando dos ingredientes activos: Compuesto A y Compuesto B. El objetivo es minimizar los costos de producción mientras se cumplen los estándares de calidad y regulaciones sanitarias.
+
+**Contexto del problema:**
+
+- **Compuesto A:** Ingrediente activo básico, costo $20 por litro
+- **Compuesto B:** Ingrediente activo premium, costo $30 por litro
+- **Producto final:** Jarabe medicinal de alta calidad para exportación
 
 **Datos del problema:**
 
-- **Variables:** C1 (componente 1), C2 (componente 2)
-- **Función Objetivo:** Minimizar Z = 20·C1 + 30·C2
-- **Restricciones:**
-  - Requisito mínimo: 1·C1 + 1·C2 ≥ 40 (cantidad mínima total)
-  - Límite superior: 2·C1 + 1·C2 ≤ 80 (restricción de capacidad)
-  - C1 ≥ 0, C2 ≥ 0
+- **Variables:** A = litros de Compuesto A, B = litros de Compuesto B
+- **Función Objetivo:** Minimizar Z = 20·A + 30·B (costo total en dólares)
 
-**Interpretación:** Se debe producir al menos 40 unidades totales de la mezcla, pero la capacidad está limitada por la segunda restricción.
+- **Restricciones:**
+  - **Volumen mínimo:** A + B ≥ 40 (se necesitan al menos 40 litros de producto final)
+  - **Concentración máxima:** 2·A + B ≤ 80 (límite de concentración activa por regulaciones)
+  - **Disponibilidad:** A ≥ 0, B ≥ 0 (no se pueden usar cantidades negativas)
+
+**Interpretación detallada:**
+
+- La **primera restricción** garantiza que se produzca el volumen mínimo requerido para el pedido
+- La **segunda restricción** evita que el medicamento sea demasiado concentrado (el Compuesto A tiene el doble de potencia)
+- El **objetivo de minimización** busca la mezcla más económica que cumpla con las regulaciones
+
+**Solución esperada:** Encontrar la combinación óptima de compuestos que produzca el jarabe al menor costo posible.
 
 ### Cómo Acceder a los Ejemplos
 
@@ -149,9 +170,9 @@ La aplicación incluye tres ejemplos predefinidos accesibles desde el menú **Ej
 
 ### 📋 Menú Ejemplos
 
-- **Startup de Software** - Problema de maximización de ganancias
-- **Problema de Producción** - Restricciones de recursos industriales
-- **Mezcla de Productos** - Problema de minimización de costos
+- **Startup de Software** - Maximización de ganancias con recursos limitados
+- **Problema de Producción** - Optimización de recursos industriales (materia prima y mano de obra)
+- **Mezcla Farmacéutica** - Minimización de costos en producción de jarabe medicinal
 
 ### ❓ Menú Ayuda
 

@@ -252,15 +252,15 @@ class MainWindow:
         messagebox.showinfo("Ejemplo", "Ejemplo de problema de producción cargado.")
     
     def _load_mix_example(self):
-        """Carga un ejemplo de problema de mezcla"""
+        """Carga un ejemplo de problema de mezcla farmacéutica"""
         self.input_panel.clear_all_constraints()
         self.input_panel.optimization_var.set("minimizar")
-        self.input_panel.c1_var.set("20")
-        self.input_panel.c2_var.set("30")
-        self.input_panel.add_constraint("1", "1", "≥", "40")   # Requisito mínimo
-        self.input_panel.add_constraint("2", "1", "≤", "80")   # Límite superior
-        self.status_label.config(text="Ejemplo de mezcla cargado")
-        messagebox.showinfo("Ejemplo", "Ejemplo de problema de mezcla cargado.")
+        self.input_panel.c1_var.set("20")   # Costo Compuesto A
+        self.input_panel.c2_var.set("30")   # Costo Compuesto B
+        self.input_panel.add_constraint("1", "1", "≥", "40")   # Volumen mínimo 40 litros
+        self.input_panel.add_constraint("2", "1", "≤", "80")   # Concentración máxima regulada
+        self.status_label.config(text="Ejemplo de mezcla farmacéutica cargado")
+        messagebox.showinfo("Ejemplo", "Ejemplo de mezcla farmacéutica cargado.\n\nProblema: Minimizar costo de producción de jarabe medicinal\nCompuestos: A ($20/L) y B ($30/L)\nRestricciones: Volumen mínimo y concentración regulada.")
     
     def _show_help(self):
         """Muestra la ayuda de la aplicación"""
